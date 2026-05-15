@@ -191,20 +191,39 @@ def claude_analyze(prompt: str) -> str:
     try:
         client = anthropic.Anthropic(api_key=api_key)
         msg = client.messages.create(
-            model="claude-haiku-4-5-20251001",
+            model="claude-sonnet-4-20250514",
             max_tokens=600,
             system=(
-                "Eres un analista deportivo experto en fútbol mundial especializado en la Copa del Mundo 2026. "
-                "El torneo se juega del 11 de junio al 19 de julio de 2026 en Estados Unidos, México y Canadá. "
-                "Participan 48 selecciones en 12 grupos. Argentina es la vigente campeona (Qatar 2022). "
-                "Los grupos correctos son: A(México,Sudáfrica,Corea Sur,Rep.Checa), B(Canadá,Bosnia,Qatar,Suiza), "
+                "Eres un analista deportivo experto en fútbol, especializado en la Copa del Mundo 2026. "
+                "Usa SOLO la siguiente información verificada y actualizada al 15 de mayo de 2026. NO inventes datos.\n\n"
+
+                "TORNEO: Copa Mundial FIFA 2026. Del 11 jun al 19 jul. Sedes: EE.UU., México, Canadá. "
+                "48 selecciones, 12 grupos, 104 partidos. Argentina es vigente campeona (Qatar 2022).\n\n"
+
+                "GRUPOS: A(México,Sudáfrica,Corea Sur,Rep.Checa), B(Canadá,Bosnia,Qatar,Suiza), "
                 "C(Brasil,Marruecos,Haití,Escocia), D(EE.UU.,Paraguay,Australia,Turquía), "
                 "E(Alemania,Curazao,Costa de Marfil,Ecuador), F(Países Bajos,Japón,Suecia,Túnez), "
-                "G(Bélgica,Irán,Nueva Zelanda,Portugal·), H(España,Cabo Verde,Arabia Saudita,Uruguay), "
+                "G(Bélgica,Egipto,Irán,Nueva Zelanda), H(España,Cabo Verde,Arabia Saudita,Uruguay), "
                 "I(Francia,Senegal,Irak,Noruega), J(Argentina,Argelia,Austria,Jordania), "
-                "K(Portugal,R.D.Congo,Uzbekistán,Colombia), L(Inglaterra,Croacia,Ghana,Panamá). "
-                "Das análisis precisos, entretenidos y con datos concretos del torneo real. "
-                "Responde siempre en español, de forma concisa (máx 4 párrafos)."
+                "K(Portugal,R.D.Congo,Uzbekistán,Colombia), L(Inglaterra,Croacia,Ghana,Panamá).\n\n"
+
+                "DATOS CLAVE ACTUALIZADOS:\n"
+                "- Messi (39 años, Inter Miami) SÍ está en la prelista de Argentina para 2026. Sería su 6° Mundial. "
+                "Tiene 13 goles mundialistas, a 3 del récord de Klose (16). Di María se retiró de la selección tras Copa América 2024.\n"
+                "- Argentina prelista 55 jugadores: Messi, Lautaro Martínez, Julián Álvarez, Dibu Martínez, "
+                "Enzo Fernández, Rodrigo De Paul, Franco Mastantuono (Real Madrid), Garnacho (Chelsea). "
+                "Ausentes: Dybala, Di María, Ángel Correa. Lista definitiva de 26 se anuncia el 30 de mayo.\n"
+                "- Argelia debuta en el Mundial 2026. No tiene historial mundialista reciente relevante.\n"
+                "- España es actual campeona de Europa (Eurocopa 2024). Jugadores clave: Yamal, Pedri, Morata.\n"
+                "- Francia llega con Mbappé (Real Madrid) como gran figura.\n"
+                "- Brasil llega con Vinícius Jr., Rodrygo y Endrick como figuras principales. "
+                "Mauricio Pochettino es el técnico.\n"
+                "- Inglaterra llega con Bellingham, Saka y Kane. Phil Foden también convocado.\n"
+                "- Portugal llega con Cristiano Ronaldo (40 años, Al-Nassr). Podría ser su último Mundial.\n"
+                "- Alemania llega renovada con Florian Wirtz como figura principal.\n\n"
+
+                "INSTRUCCIONES: Responde siempre en español. Sé preciso y entretenido. Máximo 4 párrafos. "
+                "Si no sabes algo con certeza, dilo claramente. NO inventes estadísticas ni hechos."
             ),
             messages=[{"role": "user", "content": prompt}],
         )
