@@ -240,36 +240,36 @@ GRUPOS = {
 
 PARTIDOS_INICIALES = [
     # Jueves 11 junio
-    {"local": ("🇲🇽", "México"), "visita": ("🇿🇦", "Sudáfrica"), "fecha": "Jue 11 jun", "hora": "15:00", "estadio": "Est. Azteca, Ciudad de México", "grupo": "A", "estado": "próximo"},
-    {"local": ("🇰🇷", "Corea del Sur"), "visita": ("🇨🇿", "Rep. Checa"), "fecha": "Jue 11 jun", "hora": "22:00", "estadio": "Est. Akron, Guadalajara", "grupo": "A", "estado": "próximo"},
+    {"local": ("🇲🇽", "México"), "visita": ("🇿🇦", "Sudáfrica"), "fecha": "Jue 11 jun", "hora": "15:00", "estadio": "Est. Azteca, Ciudad de México", "grupo": "A", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+ · Disney+"},
+    {"local": ("🇰🇷", "Corea del Sur"), "visita": ("🇨🇿", "Rep. Checa"), "fecha": "Jue 11 jun", "hora": "22:00", "estadio": "Est. Akron, Guadalajara", "grupo": "A", "estado": "próximo", "tv": "DSports · Paramount+"},
     # Viernes 12 junio
-    {"local": ("🇨🇦", "Canadá"), "visita": ("🇧🇦", "Bosnia-Herz."), "fecha": "Vie 12 jun", "hora": "15:00", "estadio": "BMO Field, Toronto", "grupo": "B", "estado": "próximo"},
-    {"local": ("🇺🇸", "EE.UU."), "visita": ("🇵🇾", "Paraguay"), "fecha": "Vie 12 jun", "hora": "21:00", "estadio": "SoFi Stadium, Los Ángeles", "grupo": "D", "estado": "próximo"},
+    {"local": ("🇨🇦", "Canadá"), "visita": ("🇧🇦", "Bosnia-Herz."), "fecha": "Vie 12 jun", "hora": "15:00", "estadio": "BMO Field, Toronto", "grupo": "B", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+"},
+    {"local": ("🇺🇸", "EE.UU."), "visita": ("🇵🇾", "Paraguay"), "fecha": "Vie 12 jun", "hora": "21:00", "estadio": "SoFi Stadium, Los Ángeles", "grupo": "D", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+ · Disney+"},
     # Sábado 13 junio
-    {"local": ("🇶🇦", "Qatar"), "visita": ("🇨🇭", "Suiza"), "fecha": "Sáb 13 jun", "hora": "15:00", "estadio": "Levi's Stadium, San Francisco", "grupo": "B", "estado": "próximo"},
-    {"local": ("🇧🇷", "Brasil"), "visita": ("🇲🇦", "Marruecos"), "fecha": "Sáb 13 jun", "hora": "18:00", "estadio": "MetLife Stadium, Nueva Jersey", "grupo": "C", "estado": "próximo"},
-    {"local": ("🇭🇹", "Haití"), "visita": ("SCO", "Escocia"), "fecha": "Sáb 13 jun", "hora": "21:00", "estadio": "Gillette Stadium, Boston", "grupo": "C", "estado": "próximo"},
+    {"local": ("🇶🇦", "Qatar"), "visita": ("🇨🇭", "Suiza"), "fecha": "Sáb 13 jun", "hora": "15:00", "estadio": "Levi's Stadium, San Francisco", "grupo": "B", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+"},
+    {"local": ("🇧🇷", "Brasil"), "visita": ("🇲🇦", "Marruecos"), "fecha": "Sáb 13 jun", "hora": "18:00", "estadio": "MetLife Stadium, Nueva Jersey", "grupo": "C", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+ · Disney+"},
+    {"local": ("🇭🇹", "Haití"), "visita": ("SCO", "Escocia"), "fecha": "Sáb 13 jun", "hora": "21:00", "estadio": "Gillette Stadium, Boston", "grupo": "C", "estado": "próximo", "tv": "DSports · Paramount+"},
     # Domingo 14 junio
-    {"local": ("🇦🇺", "Australia"), "visita": ("🇹🇷", "Turquía"), "fecha": "Dom 14 jun", "hora": "00:00", "estadio": "BC Place, Vancouver", "grupo": "D", "estado": "próximo"},
-    {"local": ("🇩🇪", "Alemania"), "visita": ("🇨🇼", "Curazao"), "fecha": "Dom 14 jun", "hora": "13:00", "estadio": "NRG Stadium, Houston", "grupo": "E", "estado": "próximo"},
-    {"local": ("🇳🇱", "Países Bajos"), "visita": ("🇯🇵", "Japón"), "fecha": "Dom 14 jun", "hora": "16:00", "estadio": "AT&T Stadium, Dallas", "grupo": "F", "estado": "próximo"},
-    {"local": ("🇨🇮", "Costa de Marfil"), "visita": ("🇪🇨", "Ecuador"), "fecha": "Dom 14 jun", "hora": "19:00", "estadio": "Lincoln Financial, Filadelfia", "grupo": "E", "estado": "próximo"},
-    {"local": ("🇸🇪", "Suecia"), "visita": ("🇹🇳", "Túnez"), "fecha": "Dom 14 jun", "hora": "22:00", "estadio": "Est. BBVA, Monterrey", "grupo": "F", "estado": "próximo"},
+    {"local": ("🇦🇺", "Australia"), "visita": ("🇹🇷", "Turquía"), "fecha": "Dom 14 jun", "hora": "00:00", "estadio": "BC Place, Vancouver", "grupo": "D", "estado": "próximo", "tv": "DSports · Paramount+"},
+    {"local": ("🇩🇪", "Alemania"), "visita": ("🇨🇼", "Curazao"), "fecha": "Dom 14 jun", "hora": "13:00", "estadio": "NRG Stadium, Houston", "grupo": "E", "estado": "próximo", "tv": "DSports · Paramount+"},
+    {"local": ("🇳🇱", "Países Bajos"), "visita": ("🇯🇵", "Japón"), "fecha": "Dom 14 jun", "hora": "16:00", "estadio": "AT&T Stadium, Dallas", "grupo": "F", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+"},
+    {"local": ("🇨🇮", "Costa de Marfil"), "visita": ("🇪🇨", "Ecuador"), "fecha": "Dom 14 jun", "hora": "19:00", "estadio": "Lincoln Financial, Filadelfia", "grupo": "E", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+ · Disney+"},
+    {"local": ("🇸🇪", "Suecia"), "visita": ("🇹🇳", "Túnez"), "fecha": "Dom 14 jun", "hora": "22:00", "estadio": "Est. BBVA, Monterrey", "grupo": "F", "estado": "próximo", "tv": "DSports · Paramount+"},
     # Lunes 15 junio
-    {"local": ("🇪🇸", "España"), "visita": ("🇨🇻", "Cabo Verde"), "fecha": "Lun 15 jun", "hora": "12:00", "estadio": "Mercedes-Benz Stadium, Atlanta", "grupo": "H", "estado": "próximo"},
-    {"local": ("🇧🇪", "Bélgica"), "visita": ("🇪🇬", "Egipto"), "fecha": "Lun 15 jun", "hora": "15:00", "estadio": "Gillette Stadium, Boston", "grupo": "G", "estado": "próximo"},
-    {"local": ("🇸🇦", "Arabia Saudita"), "visita": ("🇺🇾", "Uruguay"), "fecha": "Lun 15 jun", "hora": "18:00", "estadio": "Hard Rock Stadium, Miami", "grupo": "H", "estado": "próximo"},
-    {"local": ("🇮🇷", "Irán"), "visita": ("🇳🇿", "Nueva Zelanda"), "fecha": "Lun 15 jun", "hora": "21:00", "estadio": "SoFi Stadium, Los Ángeles", "grupo": "G", "estado": "próximo"},
+    {"local": ("🇪🇸", "España"), "visita": ("🇨🇻", "Cabo Verde"), "fecha": "Lun 15 jun", "hora": "12:00", "estadio": "Mercedes-Benz Stadium, Atlanta", "grupo": "H", "estado": "próximo", "tv": "DSports · Paramount+"},
+    {"local": ("🇧🇪", "Bélgica"), "visita": ("🇪🇬", "Egipto"), "fecha": "Lun 15 jun", "hora": "15:00", "estadio": "Gillette Stadium, Boston", "grupo": "G", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+"},
+    {"local": ("🇸🇦", "Arabia Saudita"), "visita": ("🇺🇾", "Uruguay"), "fecha": "Lun 15 jun", "hora": "18:00", "estadio": "Hard Rock Stadium, Miami", "grupo": "H", "estado": "próximo", "tv": "DSports · Paramount+ · Disney+"},
+    {"local": ("🇮🇷", "Irán"), "visita": ("🇳🇿", "Nueva Zelanda"), "fecha": "Lun 15 jun", "hora": "21:00", "estadio": "SoFi Stadium, Los Ángeles", "grupo": "G", "estado": "próximo", "tv": "DSports · Paramount+"},
     # Martes 16 junio
-    {"local": ("🇫🇷", "Francia"), "visita": ("🇸🇳", "Senegal"), "fecha": "Mar 16 jun", "hora": "15:00", "estadio": "MetLife Stadium, Nueva Jersey", "grupo": "I", "estado": "próximo"},
-    {"local": ("🇮🇶", "Irak"), "visita": ("🇳🇴", "Noruega"), "fecha": "Mar 16 jun", "hora": "18:00", "estadio": "Gillette Stadium, Boston", "grupo": "I", "estado": "próximo"},
-    {"local": ("🇦🇷", "Argentina"), "visita": ("🇩🇿", "Argelia"), "fecha": "Mar 16 jun", "hora": "21:00", "estadio": "Arrowhead Stadium, Kansas City", "grupo": "J", "estado": "próximo"},
+    {"local": ("🇫🇷", "Francia"), "visita": ("🇸🇳", "Senegal"), "fecha": "Mar 16 jun", "hora": "15:00", "estadio": "MetLife Stadium, Nueva Jersey", "grupo": "I", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+ · Disney+"},
+    {"local": ("🇮🇶", "Irak"), "visita": ("🇳🇴", "Noruega"), "fecha": "Mar 16 jun", "hora": "18:00", "estadio": "Gillette Stadium, Boston", "grupo": "I", "estado": "próximo", "tv": "DSports · Paramount+"},
+    {"local": ("🇦🇷", "Argentina"), "visita": ("🇩🇿", "Argelia"), "fecha": "Mar 16 jun", "hora": "21:00", "estadio": "Arrowhead Stadium, Kansas City", "grupo": "J", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+ · Disney+"},
     # Miércoles 17 junio
-    {"local": ("🇦🇹", "Austria"), "visita": ("🇯🇴", "Jordania"), "fecha": "Mié 17 jun", "hora": "00:00", "estadio": "Levi's Stadium, San Francisco", "grupo": "J", "estado": "próximo"},
-    {"local": ("🇵🇹", "Portugal"), "visita": ("🇨🇩", "R.D. Congo"), "fecha": "Mié 17 jun", "hora": "13:00", "estadio": "NRG Stadium, Houston", "grupo": "K", "estado": "próximo"},
-    {"local": ("ENG", "Inglaterra"), "visita": ("🇭🇷", "Croacia"), "fecha": "Mié 17 jun", "hora": "16:00", "estadio": "AT&T Stadium, Dallas", "grupo": "L", "estado": "próximo"},
-    {"local": ("🇬🇭", "Ghana"), "visita": ("🇵🇦", "Panamá"), "fecha": "Mié 17 jun", "hora": "19:00", "estadio": "BMO Field, Toronto", "grupo": "L", "estado": "próximo"},
-    {"local": ("🇺🇿", "Uzbekistán"), "visita": ("🇨🇴", "Colombia"), "fecha": "Mié 17 jun", "hora": "19:00", "estadio": "Est. Azteca, Ciudad de México", "grupo": "K", "estado": "próximo"},
+    {"local": ("🇦🇹", "Austria"), "visita": ("🇯🇴", "Jordania"), "fecha": "Mié 17 jun", "hora": "00:00", "estadio": "Levi's Stadium, San Francisco", "grupo": "J", "estado": "próximo", "tv": "DSports · Paramount+"},
+    {"local": ("🇵🇹", "Portugal"), "visita": ("🇨🇩", "R.D. Congo"), "fecha": "Mié 17 jun", "hora": "13:00", "estadio": "NRG Stadium, Houston", "grupo": "K", "estado": "próximo", "tv": "DSports · Paramount+"},
+    {"local": ("ENG", "Inglaterra"), "visita": ("🇭🇷", "Croacia"), "fecha": "Mié 17 jun", "hora": "16:00", "estadio": "AT&T Stadium, Dallas", "grupo": "L", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+ · Disney+"},
+    {"local": ("🇬🇭", "Ghana"), "visita": ("🇵🇦", "Panamá"), "fecha": "Mié 17 jun", "hora": "19:00", "estadio": "BMO Field, Toronto", "grupo": "L", "estado": "próximo", "tv": "DSports · Paramount+"},
+    {"local": ("🇺🇿", "Uzbekistán"), "visita": ("🇨🇴", "Colombia"), "fecha": "Mié 17 jun", "hora": "19:00", "estadio": "Est. Azteca, Ciudad de México", "grupo": "K", "estado": "próximo", "tv": "Chilevisión · DSports · Paramount+ · Disney+"},
 ]
 
 FAVORITOS = [
@@ -292,6 +292,8 @@ def render_match_card(p: dict):
     }.get(p["estado"], "")
 
     score = p.get("score", "– : –")
+    tv = p.get("tv", "")
+    tv_html = f'<div style="margin-top:8px; font-size:0.75rem; color:#6b7280;">📺 {tv}</div>' if tv else ""
 
     def fmt_flag(flag):
         if flag in ("ENG", "SCO"):
@@ -309,6 +311,7 @@ def render_match_card(p: dict):
         <span class="score-center">{score}</span>
         <span class="team-name">{fmt_flag(p["visita"][0])} {p["visita"][1]}</span>
       </div>
+      {tv_html}
     </div>
     """, unsafe_allow_html=True)
 
