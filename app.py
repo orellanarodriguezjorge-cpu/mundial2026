@@ -283,6 +283,11 @@ def render_match_card(p: dict):
 
     score = p.get("score", "– : –")
 
+    def fmt_flag(flag):
+        if len(flag) <= 3 and flag.isalpha():
+            return f'<span style="display:inline-block;font-size:0.65rem;font-weight:700;background:#334155;color:#cbd5e1;border-radius:4px;padding:2px 4px;vertical-align:middle;line-height:1.4;">{flag}</span>'
+        return flag
+
     st.markdown(f"""
     <div class="match-card">
       <div class="match-header">
@@ -290,9 +295,9 @@ def render_match_card(p: dict):
         {estado_badge}
       </div>
       <div class="match-teams">
-        <span class="team-name">{p["local"][0]} {p["local"][1]}</span>
+        <span class="team-name">{fmt_flag(p["local"][0])} {p["local"][1]}</span>
         <span class="score-center">{score}</span>
-        <span class="team-name">{p["visita"][0]} {p["visita"][1]}</span>
+        <span class="team-name">{fmt_flag(p["visita"][0])} {p["visita"][1]}</span>
       </div>
     </div>
     """, unsafe_allow_html=True)
@@ -394,7 +399,11 @@ with tab2:
                 for j, (bandera, nombre) in enumerate(equipos):
                     color = "#4ade80" if j < 2 else "#9ca3af"
                     fw = "600" if j < 2 else "400"
-                    html += f"""<tr><td style="color:{color};font-weight:{fw};padding:5px 4px;">{bandera} {nombre}</td><td style="text-align:right;color:#6b7280;padding:5px 4px;">0</td><td style="text-align:right;color:#6b7280;padding:5px 4px;">0</td><td style="text-align:right;color:{color};font-weight:{fw};padding:5px 4px;">0</td></tr>"""
+                    if len(bandera) <= 3 and bandera.isalpha():
+                        flag_html = f'<span style="display:inline-block;font-size:0.6rem;font-weight:700;background:#334155;color:#cbd5e1;border-radius:3px;padding:1px 3px;vertical-align:middle;">{bandera}</span>'
+                    else:
+                        flag_html = bandera
+                    html += f"""<tr><td style="color:{color};font-weight:{fw};padding:5px 4px;">{flag_html} {nombre}</td><td style="text-align:right;color:#6b7280;padding:5px 4px;">0</td><td style="text-align:right;color:#6b7280;padding:5px 4px;">0</td><td style="text-align:right;color:{color};font-weight:{fw};padding:5px 4px;">0</td></tr>"""
                 html += "</table></div>"
                 st.markdown(html, unsafe_allow_html=True)
 
