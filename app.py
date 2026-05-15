@@ -356,7 +356,7 @@ with c4:
 st.markdown("<br>", unsafe_allow_html=True)
 
 # ── TABS ─────────────────────────────────────────────────────────────────────
-tab1, tab2, tab3, tab4 = st.tabs(["⚽ Partidos", "📊 Grupos", "🤖 Análisis IA", "🏆 Predictor"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["⚽ Partidos", "📊 Grupos", "🔍 Por Selección", "🤖 Análisis IA", "🏆 Predictor"])
 
 # ── TAB 1: PARTIDOS ──────────────────────────────────────────────────────────
 with tab1:
@@ -421,8 +421,45 @@ with tab2:
                 st.markdown(html, unsafe_allow_html=True)
 
 
-# ── TAB 3: ANÁLISIS IA ───────────────────────────────────────────────────────
+# ── TAB 3: POR SELECCIÓN ─────────────────────────────────────────────────────
 with tab3:
+    st.subheader("Partidos por selección")
+    st.caption("Selecciona un país para ver todos sus partidos de la fase de grupos.")
+
+    # Construir diccionario de partidos por selección
+    PARTIDOS_POR_SELECCION = {}
+    for p in PARTIDOS_INICIALES:
+        local_nombre = p["local"][1]
+        visita_nombre = p["visita"][1]
+        if local_nombre not in PARTIDOS_POR_SELECCION:
+            PARTIDOS_POR_SELECCION[local_nombre] = []
+        if visita_nombre not in PARTIDOS_POR_SELECCION:
+            PARTIDOS_POR_SELECCION[visita_nombre] = []
+        PARTIDOS_POR_SELECCION[local_nombre].append(p)
+        PARTIDOS_POR_SELECCION[visita_nombre].append(p)
+
+    selecciones_ordenadas = sorted(PARTIDOS_POR_SELECCION.keys())
+    seleccion_elegida = st.selectbox("🔍 Busca tu selección", selecciones_ordenadas)
+
+    if seleccion_elegida:
+        partidos_seleccion = PARTIDOS_POR_SELECCION[seleccion_elegida]
+        # Encontrar grupo
+        grupo_sel = ""
+        for g, equipos in GRUPOS.items():
+            if any(nombre == seleccion_elegida for _, nombre in equipos):
+                grupo_sel = g
+                compañeros = [nombre for _, nombre in equipos if nombre != seleccion_elegida]
+                break
+
+        if grupo_sel:
+            st.markdown(f"**Grupo {grupo_sel}** · Compañeros: {', '.join(compañeros)}")
+
+        st.markdown("<br>", unsafe_allow_html=True)
+        for p in sorted(partidos_seleccion, key=lambda x: x["fecha"]):
+            render_match_card(p)
+
+# ── TAB 4: ANÁLISIS IA ───────────────────────────────────────────────────────
+with tab4:
     st.subheader("Análisis pre-partido con Claude IA")
 
     partidos_analizar = [
@@ -431,7 +468,7 @@ with tab3:
         ("Brasil vs Marruecos", "🇧🇷", "🇲🇦", "Brasil", "Marruecos", 60, 22, 18),
         ("Francia vs Senegal", "🇫🇷", "🇸🇳", "Francia", "Senegal", 62, 22, 16),
         ("España vs Cabo Verde", "🇪🇸", "🇨🇻", "España", "Cabo Verde", 82, 12, 6),
-        ("Inglaterra vs Croacia", "🏴", "🇭🇷", "Inglaterra", "Croacia", 55, 25, 20),
+        ("Inglaterra vs Croacia", "ENG", "🇭🇷", "Inglaterra", "Croacia", 55, 25, 20),
         ("Alemania vs Curazao", "🇩🇪", "🇨🇼", "Alemania", "Curazao", 88, 8, 4),
         ("EE.UU. vs Paraguay", "🇺🇸", "🇵🇾", "EE.UU.", "Paraguay", 48, 28, 24),
     ]
@@ -454,8 +491,8 @@ with tab3:
                         analysis = claude_analyze(prompt)
                         st.markdown(f'<div class="ai-box"><p>{analysis}</p></div>', unsafe_allow_html=True)
 
-# ── TAB 4: PREDICTOR ─────────────────────────────────────────────────────────
-with tab4:
+# ── TAB 5: PREDICTOR ─────────────────────────────────────────────────────────
+with tab5:
     st.subheader("¿Quién ganará el Mundial 2026?")
 
     st.markdown("**Probabilidades según modelos estadísticos y rendimiento reciente:**")
