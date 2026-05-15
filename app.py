@@ -365,34 +365,20 @@ with tab2:
     st.subheader("Fase de grupos — Mundial 2026")
     st.caption("El torneo se juega con 12 grupos de 4 equipos. Clasifican los 2 primeros de cada grupo + 8 mejores terceros.")
 
-    cols = st.columns(3)
-    for i, (grupo, equipos) in enumerate(GRUPOS.items()):
-        with cols[i % 3]:
-            filas = ""
-            for j, (bandera, nombre) in enumerate(equipos):
-                clasificado = "color:#4ade80; font-weight:600;" if j < 2 else "color:#9ca3af;"
-                filas += f"""
-                <tr>
-                  <td style="{clasificado} padding:5px 4px;">{bandera} {nombre}</td>
-                  <td style="text-align:right; color:#6b7280; padding:5px 4px;">0</td>
-                  <td style="text-align:right; color:#6b7280; padding:5px 4px;">0</td>
-                  <td style="text-align:right; {clasificado} padding:5px 4px;">0</td>
-                </tr>"""
+    # Mostrar grupos en filas de 3
+    grupos_lista = list(GRUPOS.items())
+    for fila in range(0, len(grupos_lista), 3):
+        cols = st.columns(3)
+        for col_idx, (grupo, equipos) in enumerate(grupos_lista[fila:fila+3]):
+            with cols[col_idx]:
+                html = f"""<div class="group-card"><div class="group-title">Grupo {grupo}</div><table style="width:100%;font-size:0.82rem;border-collapse:collapse;"><tr><th style="text-align:left;color:#4b5563;font-size:0.7rem;padding-bottom:6px;">Selección</th><th style="text-align:right;color:#4b5563;font-size:0.7rem;padding-bottom:6px;">PJ</th><th style="text-align:right;color:#4b5563;font-size:0.7rem;padding-bottom:6px;">GD</th><th style="text-align:right;color:#4b5563;font-size:0.7rem;padding-bottom:6px;">Pts</th></tr>"""
+                for j, (bandera, nombre) in enumerate(equipos):
+                    color = "#4ade80" if j < 2 else "#9ca3af"
+                    fw = "600" if j < 2 else "400"
+                    html += f"""<tr><td style="color:{color};font-weight:{fw};padding:5px 4px;">{bandera} {nombre}</td><td style="text-align:right;color:#6b7280;padding:5px 4px;">0</td><td style="text-align:right;color:#6b7280;padding:5px 4px;">0</td><td style="text-align:right;color:{color};font-weight:{fw};padding:5px 4px;">0</td></tr>"""
+                html += "</table></div>"
+                st.markdown(html, unsafe_allow_html=True)
 
-            st.markdown(f"""
-            <div class="group-card">
-              <div class="group-title">Grupo {grupo}</div>
-              <table style="width:100%; font-size:0.82rem; border-collapse:collapse;">
-                <tr>
-                  <th style="text-align:left; color:#4b5563; font-size:0.7rem; padding-bottom:6px;">Selección</th>
-                  <th style="text-align:right; color:#4b5563; font-size:0.7rem; padding-bottom:6px;">PJ</th>
-                  <th style="text-align:right; color:#4b5563; font-size:0.7rem; padding-bottom:6px;">GD</th>
-                  <th style="text-align:right; color:#4b5563; font-size:0.7rem; padding-bottom:6px;">Pts</th>
-                </tr>
-                {filas}
-              </table>
-            </div>
-            """, unsafe_allow_html=True)
 
 # ── TAB 3: ANÁLISIS IA ───────────────────────────────────────────────────────
 with tab3:
