@@ -216,7 +216,7 @@ def claude_analyze(prompt: str) -> str:
 GRUPOS = {
     "A": [("🇲🇽", "México"), ("🇿🇦", "Sudáfrica"), ("🇰🇷", "Corea del Sur"), ("🇨🇿", "Rep. Checa")],
     "B": [("🇨🇦", "Canadá"), ("🇧🇦", "Bosnia-Herz."), ("🇶🇦", "Qatar"), ("🇨🇭", "Suiza")],
-    "C": [("🇧🇷", "Brasil"), ("🇲🇦", "Marruecos"), ("🇭🇹", "Haití"), ("🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Escocia")],
+    "C": [("🇧🇷", "Brasil"), ("🇲🇦", "Marruecos"), ("🇭🇹", "Haití"), ("SCO", "Escocia")],
     "D": [("🇺🇸", "EE.UU."), ("🇵🇾", "Paraguay"), ("🇦🇺", "Australia"), ("🇹🇷", "Turquía")],
     "E": [("🇩🇪", "Alemania"), ("🇨🇼", "Curazao"), ("🇨🇮", "Costa de Marfil"), ("🇪🇨", "Ecuador")],
     "F": [("🇳🇱", "Países Bajos"), ("🇯🇵", "Japón"), ("🇸🇪", "Suecia"), ("🇹🇳", "Túnez")],
@@ -225,7 +225,7 @@ GRUPOS = {
     "I": [("🇫🇷", "Francia"), ("🇸🇳", "Senegal"), ("🇮🇶", "Irak"), ("🇳🇴", "Noruega")],
     "J": [("🇦🇷", "Argentina"), ("🇩🇿", "Argelia"), ("🇦🇹", "Austria"), ("🇯🇴", "Jordania")],
     "K": [("🇵🇹", "Portugal"), ("🇨🇩", "R.D. Congo"), ("🇺🇿", "Uzbekistán"), ("🇨🇴", "Colombia")],
-    "L": [("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Inglaterra"), ("🇭🇷", "Croacia"), ("🇬🇭", "Ghana"), ("🇵🇦", "Panamá")],
+    "L": [("ENG", "Inglaterra"), ("🇭🇷", "Croacia"), ("🇬🇭", "Ghana"), ("🇵🇦", "Panamá")],
 }
 
 PARTIDOS_INICIALES = [
@@ -238,7 +238,7 @@ PARTIDOS_INICIALES = [
     # Sábado 13 junio
     {"local": ("🇶🇦", "Qatar"), "visita": ("🇨🇭", "Suiza"), "fecha": "Sáb 13 jun", "hora": "15:00", "estadio": "Levi's Stadium, San Francisco", "grupo": "B", "estado": "próximo"},
     {"local": ("🇧🇷", "Brasil"), "visita": ("🇲🇦", "Marruecos"), "fecha": "Sáb 13 jun", "hora": "18:00", "estadio": "MetLife Stadium, Nueva Jersey", "grupo": "C", "estado": "próximo"},
-    {"local": ("🇭🇹", "Haití"), "visita": ("🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Escocia"), "fecha": "Sáb 13 jun", "hora": "21:00", "estadio": "Gillette Stadium, Boston", "grupo": "C", "estado": "próximo"},
+    {"local": ("🇭🇹", "Haití"), "visita": ("SCO", "Escocia"), "fecha": "Sáb 13 jun", "hora": "21:00", "estadio": "Gillette Stadium, Boston", "grupo": "C", "estado": "próximo"},
     # Domingo 14 junio
     {"local": ("🇦🇺", "Australia"), "visita": ("🇹🇷", "Turquía"), "fecha": "Dom 14 jun", "hora": "00:00", "estadio": "BC Place, Vancouver", "grupo": "D", "estado": "próximo"},
     {"local": ("🇩🇪", "Alemania"), "visita": ("🇨🇼", "Curazao"), "fecha": "Dom 14 jun", "hora": "13:00", "estadio": "NRG Stadium, Houston", "grupo": "E", "estado": "próximo"},
@@ -257,7 +257,7 @@ PARTIDOS_INICIALES = [
     # Miércoles 17 junio
     {"local": ("🇦🇹", "Austria"), "visita": ("🇯🇴", "Jordania"), "fecha": "Mié 17 jun", "hora": "00:00", "estadio": "Levi's Stadium, San Francisco", "grupo": "J", "estado": "próximo"},
     {"local": ("🇵🇹", "Portugal"), "visita": ("🇨🇩", "R.D. Congo"), "fecha": "Mié 17 jun", "hora": "13:00", "estadio": "NRG Stadium, Houston", "grupo": "K", "estado": "próximo"},
-    {"local": ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Inglaterra"), "visita": ("🇭🇷", "Croacia"), "fecha": "Mié 17 jun", "hora": "16:00", "estadio": "AT&T Stadium, Dallas", "grupo": "L", "estado": "próximo"},
+    {"local": ("ENG", "Inglaterra"), "visita": ("🇭🇷", "Croacia"), "fecha": "Mié 17 jun", "hora": "16:00", "estadio": "AT&T Stadium, Dallas", "grupo": "L", "estado": "próximo"},
     {"local": ("🇬🇭", "Ghana"), "visita": ("🇵🇦", "Panamá"), "fecha": "Mié 17 jun", "hora": "19:00", "estadio": "BMO Field, Toronto", "grupo": "L", "estado": "próximo"},
     {"local": ("🇺🇿", "Uzbekistán"), "visita": ("🇨🇴", "Colombia"), "fecha": "Mié 17 jun", "hora": "19:00", "estadio": "Est. Azteca, Ciudad de México", "grupo": "K", "estado": "próximo"},
 ]
@@ -267,7 +267,7 @@ FAVORITOS = [
     ("🇧🇷", "Brasil", 18),
     ("🇫🇷", "Francia", 15),
     ("🇪🇸", "España", 12),
-    ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Inglaterra", 10),
+    ("ENG", "Inglaterra", 10),
     ("🇩🇪", "Alemania", 8),
     ("🇵🇹", "Portugal", 5),
     ("Otros", "Otros", 4),
@@ -409,7 +409,7 @@ with tab3:
         ("Brasil vs Marruecos", "🇧🇷", "🇲🇦", "Brasil", "Marruecos", 60, 22, 18),
         ("Francia vs Senegal", "🇫🇷", "🇸🇳", "Francia", "Senegal", 62, 22, 16),
         ("España vs Cabo Verde", "🇪🇸", "🇨🇻", "España", "Cabo Verde", 82, 12, 6),
-        ("Inglaterra vs Croacia", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "🇭🇷", "Inglaterra", "Croacia", 55, 25, 20),
+        ("Inglaterra vs Croacia", "🏴", "🇭🇷", "Inglaterra", "Croacia", 55, 25, 20),
         ("Alemania vs Curazao", "🇩🇪", "🇨🇼", "Alemania", "Curazao", 88, 8, 4),
         ("EE.UU. vs Paraguay", "🇺🇸", "🇵🇾", "EE.UU.", "Paraguay", 48, 28, 24),
     ]
