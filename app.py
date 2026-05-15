@@ -284,7 +284,7 @@ def render_match_card(p: dict):
     score = p.get("score", "– : –")
 
     def fmt_flag(flag):
-        if len(flag) <= 3 and flag.isalpha():
+        if flag in ("ENG", "SCO"):
             return f'<span style="display:inline-block;font-size:0.65rem;font-weight:700;background:#334155;color:#cbd5e1;border-radius:4px;padding:2px 4px;vertical-align:middle;line-height:1.4;">{flag}</span>'
         return flag
 
@@ -399,7 +399,7 @@ with tab2:
                 for j, (bandera, nombre) in enumerate(equipos):
                     color = "#4ade80" if j < 2 else "#9ca3af"
                     fw = "600" if j < 2 else "400"
-                    if len(bandera) <= 3 and bandera.isalpha():
+                    if bandera in ("ENG", "SCO"):
                         flag_html = f'<span style="display:inline-block;font-size:0.6rem;font-weight:700;background:#334155;color:#cbd5e1;border-radius:3px;padding:1px 3px;vertical-align:middle;">{bandera}</span>'
                     else:
                         flag_html = bandera
