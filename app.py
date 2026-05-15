@@ -191,11 +191,19 @@ def claude_analyze(prompt: str) -> str:
     try:
         client = anthropic.Anthropic(api_key=api_key)
         msg = client.messages.create(
-            model="claude-haiku-4-5-20251001",
+            model="claude-sonnet-4-20250514",
             max_tokens=600,
             system=(
-                "Eres un analista deportivo experto en fútbol mundial. "
-                "Das análisis precisos, entretenidos y con datos concretos. "
+                "Eres un analista deportivo experto en fútbol mundial especializado en la Copa del Mundo 2026. "
+                "El torneo se juega del 11 de junio al 19 de julio de 2026 en Estados Unidos, México y Canadá. "
+                "Participan 48 selecciones en 12 grupos. Argentina es la vigente campeona (Qatar 2022). "
+                "Los grupos correctos son: A(México,Sudáfrica,Corea Sur,Rep.Checa), B(Canadá,Bosnia,Qatar,Suiza), "
+                "C(Brasil,Marruecos,Haití,Escocia), D(EE.UU.,Paraguay,Australia,Turquía), "
+                "E(Alemania,Curazao,Costa de Marfil,Ecuador), F(Países Bajos,Japón,Suecia,Túnez), "
+                "G(Bélgica,Irán,Nueva Zelanda,Portugal·), H(España,Cabo Verde,Arabia Saudita,Uruguay), "
+                "I(Francia,Senegal,Irak,Noruega), J(Argentina,Argelia,Austria,Jordania), "
+                "K(Portugal,R.D.Congo,Uzbekistán,Colombia), L(Inglaterra,Croacia,Ghana,Panamá). "
+                "Das análisis precisos, entretenidos y con datos concretos del torneo real. "
                 "Responde siempre en español, de forma concisa (máx 4 párrafos)."
             ),
             messages=[{"role": "user", "content": prompt}],
@@ -208,27 +216,31 @@ def claude_analyze(prompt: str) -> str:
 GRUPOS = {
     "A": [("🇲🇽", "México"), ("🇿🇦", "Sudáfrica"), ("🇰🇷", "Corea del Sur"), ("🇨🇿", "Rep. Checa")],
     "B": [("🇨🇦", "Canadá"), ("🇧🇦", "Bosnia-Herz."), ("🇶🇦", "Qatar"), ("🇨🇭", "Suiza")],
-    "C": [("🇩🇪", "Alemania"), ("🇯🇵", "Japón"), ("🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Escocia"), ("🇹🇳", "Túnez")],
+    "C": [("🇧🇷", "Brasil"), ("🇲🇦", "Marruecos"), ("🇭🇹", "Haití"), ("🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Escocia")],
     "D": [("🇺🇸", "EE.UU."), ("🇵🇾", "Paraguay"), ("🇦🇺", "Australia"), ("🇹🇷", "Turquía")],
-    "E": [("🇧🇷", "Brasil"), ("🇳🇬", "Nigeria"), ("🇸🇪", "Suecia"), ("🇺🇿", "Uzbekistán")],
-    "F": [("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Inglaterra"), ("🇨🇴", "Colombia"), ("🇨🇲", "Camerún"), ("🇸🇰", "Eslovaquia")],
-    "G": [("🇵🇹", "Portugal"), ("🇮🇩", "Indonesia"), ("🇨🇱", "Chile"), ("🇨🇻", "Cabo Verde")],
-    "H": [("🇺🇾", "Uruguay"), ("🇪🇸", "España"), ("🇸🇪", "Suecia²"), ("🇹🇳", "Túnez²")],
-    "I": [("🇫🇷", "Francia"), ("🇲🇦", "Marruecos"), ("🇧🇪", "Bélgica"), ("🇭🇷", "Croacia")],
+    "E": [("🇩🇪", "Alemania"), ("🇨🇼", "Curazao"), ("🇨🇮", "Costa de Marfil"), ("🇪🇨", "Ecuador")],
+    "F": [("🇳🇱", "Países Bajos"), ("🇯🇵", "Japón"), ("🇸🇪", "Suecia"), ("🇹🇳", "Túnez")],
+    "G": [("🇧🇪", "Bélgica"), ("🇮🇷", "Irán"), ("🇳🇿", "Nueva Zelanda"), ("🇵🇹", "Portugal·")],
+    "H": [("🇪🇸", "España"), ("🇨🇻", "Cabo Verde"), ("🇸🇦", "Arabia Saudita"), ("🇺🇾", "Uruguay")],
+    "I": [("🇫🇷", "Francia"), ("🇸🇳", "Senegal"), ("🇮🇶", "Irak"), ("🇳🇴", "Noruega")],
     "J": [("🇦🇷", "Argentina"), ("🇩🇿", "Argelia"), ("🇦🇹", "Austria"), ("🇯🇴", "Jordania")],
-    "K": [("🇳🇱", "Países Bajos"), ("🇸🇳", "Senegal"), ("🇨🇴", "Colombia²"), ("🇨🇼", "Curazao")],
-    "L": [("🇲🇽", "México²"), ("🇿🇦", "Ecuador"), ("🇰🇷", "Irak"), ("🇨🇿", "Venezuela")],
+    "K": [("🇵🇹", "Portugal"), ("🇨🇩", "R.D. Congo"), ("🇺🇿", "Uzbekistán"), ("🇨🇴", "Colombia")],
+    "L": [("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Inglaterra"), ("🇭🇷", "Croacia"), ("🇬🇭", "Ghana"), ("🇵🇦", "Panamá")],
 }
 
 PARTIDOS_INICIALES = [
-    {"local": ("🇲🇽", "México"), "visita": ("🇿🇦", "Sudáfrica"), "fecha": "11 jun", "hora": "13:00", "estadio": "Est. Ciudad de México", "grupo": "A", "estado": "próximo"},
-    {"local": ("🇰🇷", "Corea del Sur"), "visita": ("🇨🇿", "Rep. Checa"), "fecha": "11 jun", "hora": "20:00", "estadio": "Est. Guadalajara", "grupo": "A", "estado": "próximo"},
-    {"local": ("🇨🇦", "Canadá"), "visita": ("🇧🇦", "Bosnia"), "fecha": "12 jun", "hora": "16:00", "estadio": "Toronto", "grupo": "B", "estado": "próximo"},
-    {"local": ("🇺🇸", "EE.UU."), "visita": ("🇵🇾", "Paraguay"), "fecha": "12 jun", "hora": "19:00", "estadio": "Los Ángeles", "grupo": "D", "estado": "próximo"},
-    {"local": ("🇧🇷", "Brasil"), "visita": ("🇳🇬", "Nigeria"), "fecha": "13 jun", "hora": "16:00", "estadio": "Dallas", "grupo": "E", "estado": "próximo"},
-    {"local": ("🇦🇷", "Argentina"), "visita": ("🇩🇿", "Argelia"), "fecha": "13 jun", "hora": "19:00", "estadio": "Miami", "grupo": "J", "estado": "próximo"},
-    {"local": ("🇫🇷", "Francia"), "visita": ("🇲🇦", "Marruecos"), "fecha": "14 jun", "hora": "16:00", "estadio": "Nueva York", "grupo": "I", "estado": "próximo"},
-    {"local": ("🇪🇸", "España"), "visita": ("🇺🇾", "Uruguay"), "fecha": "14 jun", "hora": "19:00", "estadio": "Chicago", "grupo": "H", "estado": "próximo"},
+    {"local": ("🇲🇽", "México"), "visita": ("🇿🇦", "Sudáfrica"), "fecha": "11 jun", "hora": "15:00 CHI", "estadio": "Est. Azteca, Ciudad de México", "grupo": "A", "estado": "próximo"},
+    {"local": ("🇰🇷", "Corea del Sur"), "visita": ("🇨🇿", "Rep. Checa"), "fecha": "11 jun", "hora": "22:00 CHI", "estadio": "Est. Akron, Guadalajara", "grupo": "A", "estado": "próximo"},
+    {"local": ("🇨🇦", "Canadá"), "visita": ("🇧🇦", "Bosnia-Herz."), "fecha": "12 jun", "hora": "15:00 CHI", "estadio": "BMO Field, Toronto", "grupo": "B", "estado": "próximo"},
+    {"local": ("🇶🇦", "Qatar"), "visita": ("🇨🇭", "Suiza"), "fecha": "12 jun", "hora": "17:00 CHI", "estadio": "Levi's Stadium, San José", "grupo": "B", "estado": "próximo"},
+    {"local": ("🇺🇸", "EE.UU."), "visita": ("🇵🇾", "Paraguay"), "fecha": "12 jun", "hora": "22:00 CHI", "estadio": "SoFi Stadium, Los Ángeles", "grupo": "D", "estado": "próximo"},
+    {"local": ("🇧🇷", "Brasil"), "visita": ("🇲🇦", "Marruecos"), "fecha": "13 jun", "hora": "19:00 CHI", "estadio": "MetLife Stadium, Nueva York", "grupo": "C", "estado": "próximo"},
+    {"local": ("🇩🇪", "Alemania"), "visita": ("🇨🇼", "Curazao"), "fecha": "14 jun", "hora": "14:00 CHI", "estadio": "NRG Stadium, Houston", "grupo": "E", "estado": "próximo"},
+    {"local": ("🇦🇷", "Argentina"), "visita": ("🇩🇿", "Argelia"), "fecha": "14 jun", "hora": "22:00 CHI", "estadio": "Arrowhead Stadium, Kansas City", "grupo": "J", "estado": "próximo"},
+    {"local": ("🇫🇷", "Francia"), "visita": ("🇸🇳", "Senegal"), "fecha": "15 jun", "hora": "16:00 CHI", "estadio": "MetLife Stadium, Nueva York", "grupo": "I", "estado": "próximo"},
+    {"local": ("🇪🇸", "España"), "visita": ("🇨🇻", "Cabo Verde"), "fecha": "15 jun", "hora": "13:00 CHI", "estadio": "Mercedes-Benz Stadium, Atlanta", "grupo": "H", "estado": "próximo"},
+    {"local": ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Inglaterra"), "visita": ("🇭🇷", "Croacia"), "fecha": "15 jun", "hora": "17:00 CHI", "estadio": "AT&T Stadium, Arlington", "grupo": "L", "estado": "próximo"},
+    {"local": ("🇵🇹", "Portugal"), "visita": ("🇨🇩", "R.D. Congo"), "fecha": "15 jun", "hora": "14:00 CHI", "estadio": "NRG Stadium, Houston", "grupo": "K", "estado": "próximo"},
 ]
 
 FAVORITOS = [
@@ -388,10 +400,13 @@ with tab3:
 
     partidos_analizar = [
         ("México vs Sudáfrica", "🇲🇽", "🇿🇦", "México", "Sudáfrica", 55, 25, 20),
-        ("Argentina vs Argelia", "🇦🇷", "🇩🇿", "Argentina", "Argelia", 72, 18, 10),
-        ("Brasil vs Nigeria", "🇧🇷", "🇳🇬", "Brasil", "Nigeria", 65, 20, 15),
-        ("Francia vs Marruecos", "🇫🇷", "🇲🇦", "Francia", "Marruecos", 58, 24, 18),
-        ("España vs Uruguay", "🇪🇸", "🇺🇾", "España", "Uruguay", 52, 26, 22),
+        ("Argentina vs Argelia", "🇦🇷", "🇩🇿", "Argentina", "Argelia", 75, 15, 10),
+        ("Brasil vs Marruecos", "🇧🇷", "🇲🇦", "Brasil", "Marruecos", 60, 22, 18),
+        ("Francia vs Senegal", "🇫🇷", "🇸🇳", "Francia", "Senegal", 62, 22, 16),
+        ("España vs Cabo Verde", "🇪🇸", "🇨🇻", "España", "Cabo Verde", 82, 12, 6),
+        ("Inglaterra vs Croacia", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "🇭🇷", "Inglaterra", "Croacia", 55, 25, 20),
+        ("Alemania vs Curazao", "🇩🇪", "🇨🇼", "Alemania", "Curazao", 88, 8, 4),
+        ("EE.UU. vs Paraguay", "🇺🇸", "🇵🇾", "EE.UU.", "Paraguay", 48, 28, 24),
     ]
 
     for nombre, f1, f2, local, visita, ph, pd, pa in partidos_analizar:
