@@ -229,24 +229,37 @@ GRUPOS = {
 }
 
 PARTIDOS_INICIALES = [
-    {"local": ("🇲🇽", "México"), "visita": ("🇿🇦", "Sudáfrica"), "fecha": "11 jun", "hora": "15:00 CHI", "estadio": "Est. Azteca, Ciudad de México", "grupo": "A", "estado": "próximo"},
-    {"local": ("🇰🇷", "Corea del Sur"), "visita": ("🇨🇿", "Rep. Checa"), "fecha": "11 jun", "hora": "23:00 CHI", "estadio": "Est. Akron, Guadalajara", "grupo": "A", "estado": "próximo"},
-    {"local": ("🇨🇦", "Canadá"), "visita": ("🇧🇦", "Bosnia-Herz."), "fecha": "12 jun", "hora": "16:00 CHI", "estadio": "BMO Field, Toronto", "grupo": "B", "estado": "próximo"},
-    {"local": ("🇺🇸", "EE.UU."), "visita": ("🇵🇾", "Paraguay"), "fecha": "12 jun", "hora": "22:00 CHI", "estadio": "SoFi Stadium, Los Ángeles", "grupo": "D", "estado": "próximo"},
-    {"local": ("🇶🇦", "Qatar"), "visita": ("🇨🇭", "Suiza"), "fecha": "13 jun", "hora": "16:00 CHI", "estadio": "Levi's Stadium, San Francisco", "grupo": "B", "estado": "próximo"},
-    {"local": ("🇧🇷", "Brasil"), "visita": ("🇲🇦", "Marruecos"), "fecha": "13 jun", "hora": "19:00 CHI", "estadio": "MetLife Stadium, Nueva Jersey", "grupo": "C", "estado": "próximo"},
-    {"local": ("🇭🇹", "Haití"), "visita": ("🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Escocia"), "fecha": "13 jun", "hora": "22:00 CHI", "estadio": "Gillette Stadium, Boston", "grupo": "C", "estado": "próximo"},
-    {"local": ("🇦🇺", "Australia"), "visita": ("🇹🇷", "Turquía"), "fecha": "14 jun", "hora": "01:00 CHI", "estadio": "BC Place, Vancouver", "grupo": "D", "estado": "próximo"},
-    {"local": ("🇩🇪", "Alemania"), "visita": ("🇨🇼", "Curazao"), "fecha": "14 jun", "hora": "14:00 CHI", "estadio": "NRG Stadium, Houston", "grupo": "E", "estado": "próximo"},
-    {"local": ("🇳🇱", "Países Bajos"), "visita": ("🇯🇵", "Japón"), "fecha": "14 jun", "hora": "17:00 CHI", "estadio": "AT&T Stadium, Arlington", "grupo": "F", "estado": "próximo"},
-    {"local": ("🇨🇮", "Costa de Marfil"), "visita": ("🇪🇨", "Ecuador"), "fecha": "14 jun", "hora": "20:00 CHI", "estadio": "Lincoln Financial, Filadelfia", "grupo": "E", "estado": "próximo"},
-    {"local": ("🇸🇪", "Suecia"), "visita": ("🇹🇳", "Túnez"), "fecha": "14 jun", "hora": "23:00 CHI", "estadio": "Est. BBVA, Monterrey", "grupo": "F", "estado": "próximo"},
-    {"local": ("🇪🇸", "España"), "visita": ("🇨🇻", "Cabo Verde"), "fecha": "15 jun", "hora": "13:00 CHI", "estadio": "Mercedes-Benz Stadium, Atlanta", "grupo": "H", "estado": "próximo"},
-    {"local": ("🇵🇹", "Portugal"), "visita": ("🇨🇩", "R.D. Congo"), "fecha": "15 jun", "hora": "14:00 CHI", "estadio": "NRG Stadium, Houston", "grupo": "K", "estado": "próximo"},
-    {"local": ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Inglaterra"), "visita": ("🇭🇷", "Croacia"), "fecha": "15 jun", "hora": "17:00 CHI", "estadio": "AT&T Stadium, Arlington", "grupo": "L", "estado": "próximo"},
-    {"local": ("🇸🇦", "Arabia Saudita"), "visita": ("🇺🇾", "Uruguay"), "fecha": "15 jun", "hora": "19:00 CHI", "estadio": "Hard Rock Stadium, Miami", "grupo": "H", "estado": "próximo"},
-    {"local": ("🇫🇷", "Francia"), "visita": ("🇸🇳", "Senegal"), "fecha": "16 jun", "hora": "16:00 CHI", "estadio": "MetLife Stadium, Nueva Jersey", "grupo": "I", "estado": "próximo"},
-    {"local": ("🇦🇷", "Argentina"), "visita": ("🇩🇿", "Argelia"), "fecha": "15 jun", "hora": "22:00 CHI", "estadio": "Arrowhead Stadium, Kansas City", "grupo": "J", "estado": "próximo"},
+    # Jueves 11 junio
+    {"local": ("🇲🇽", "México"), "visita": ("🇿🇦", "Sudáfrica"), "fecha": "Jue 11 jun", "hora": "15:00", "estadio": "Est. Azteca, Ciudad de México", "grupo": "A", "estado": "próximo"},
+    {"local": ("🇰🇷", "Corea del Sur"), "visita": ("🇨🇿", "Rep. Checa"), "fecha": "Jue 11 jun", "hora": "22:00", "estadio": "Est. Akron, Guadalajara", "grupo": "A", "estado": "próximo"},
+    # Viernes 12 junio
+    {"local": ("🇨🇦", "Canadá"), "visita": ("🇧🇦", "Bosnia-Herz."), "fecha": "Vie 12 jun", "hora": "15:00", "estadio": "BMO Field, Toronto", "grupo": "B", "estado": "próximo"},
+    {"local": ("🇺🇸", "EE.UU."), "visita": ("🇵🇾", "Paraguay"), "fecha": "Vie 12 jun", "hora": "21:00", "estadio": "SoFi Stadium, Los Ángeles", "grupo": "D", "estado": "próximo"},
+    # Sábado 13 junio
+    {"local": ("🇶🇦", "Qatar"), "visita": ("🇨🇭", "Suiza"), "fecha": "Sáb 13 jun", "hora": "15:00", "estadio": "Levi's Stadium, San Francisco", "grupo": "B", "estado": "próximo"},
+    {"local": ("🇧🇷", "Brasil"), "visita": ("🇲🇦", "Marruecos"), "fecha": "Sáb 13 jun", "hora": "18:00", "estadio": "MetLife Stadium, Nueva Jersey", "grupo": "C", "estado": "próximo"},
+    {"local": ("🇭🇹", "Haití"), "visita": ("🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Escocia"), "fecha": "Sáb 13 jun", "hora": "21:00", "estadio": "Gillette Stadium, Boston", "grupo": "C", "estado": "próximo"},
+    # Domingo 14 junio
+    {"local": ("🇦🇺", "Australia"), "visita": ("🇹🇷", "Turquía"), "fecha": "Dom 14 jun", "hora": "00:00", "estadio": "BC Place, Vancouver", "grupo": "D", "estado": "próximo"},
+    {"local": ("🇩🇪", "Alemania"), "visita": ("🇨🇼", "Curazao"), "fecha": "Dom 14 jun", "hora": "13:00", "estadio": "NRG Stadium, Houston", "grupo": "E", "estado": "próximo"},
+    {"local": ("🇳🇱", "Países Bajos"), "visita": ("🇯🇵", "Japón"), "fecha": "Dom 14 jun", "hora": "16:00", "estadio": "AT&T Stadium, Dallas", "grupo": "F", "estado": "próximo"},
+    {"local": ("🇨🇮", "Costa de Marfil"), "visita": ("🇪🇨", "Ecuador"), "fecha": "Dom 14 jun", "hora": "19:00", "estadio": "Lincoln Financial, Filadelfia", "grupo": "E", "estado": "próximo"},
+    {"local": ("🇸🇪", "Suecia"), "visita": ("🇹🇳", "Túnez"), "fecha": "Dom 14 jun", "hora": "22:00", "estadio": "Est. BBVA, Monterrey", "grupo": "F", "estado": "próximo"},
+    # Lunes 15 junio
+    {"local": ("🇪🇸", "España"), "visita": ("🇨🇻", "Cabo Verde"), "fecha": "Lun 15 jun", "hora": "12:00", "estadio": "Mercedes-Benz Stadium, Atlanta", "grupo": "H", "estado": "próximo"},
+    {"local": ("🇧🇪", "Bélgica"), "visita": ("🇪🇬", "Egipto"), "fecha": "Lun 15 jun", "hora": "15:00", "estadio": "Gillette Stadium, Boston", "grupo": "G", "estado": "próximo"},
+    {"local": ("🇸🇦", "Arabia Saudita"), "visita": ("🇺🇾", "Uruguay"), "fecha": "Lun 15 jun", "hora": "18:00", "estadio": "Hard Rock Stadium, Miami", "grupo": "H", "estado": "próximo"},
+    {"local": ("🇮🇷", "Irán"), "visita": ("🇳🇿", "Nueva Zelanda"), "fecha": "Lun 15 jun", "hora": "21:00", "estadio": "SoFi Stadium, Los Ángeles", "grupo": "G", "estado": "próximo"},
+    # Martes 16 junio
+    {"local": ("🇫🇷", "Francia"), "visita": ("🇸🇳", "Senegal"), "fecha": "Mar 16 jun", "hora": "15:00", "estadio": "MetLife Stadium, Nueva Jersey", "grupo": "I", "estado": "próximo"},
+    {"local": ("🇮🇶", "Irak"), "visita": ("🇳🇴", "Noruega"), "fecha": "Mar 16 jun", "hora": "18:00", "estadio": "Gillette Stadium, Boston", "grupo": "I", "estado": "próximo"},
+    {"local": ("🇦🇷", "Argentina"), "visita": ("🇩🇿", "Argelia"), "fecha": "Mar 16 jun", "hora": "21:00", "estadio": "Arrowhead Stadium, Kansas City", "grupo": "J", "estado": "próximo"},
+    # Miércoles 17 junio
+    {"local": ("🇦🇹", "Austria"), "visita": ("🇯🇴", "Jordania"), "fecha": "Mié 17 jun", "hora": "00:00", "estadio": "Levi's Stadium, San Francisco", "grupo": "J", "estado": "próximo"},
+    {"local": ("🇵🇹", "Portugal"), "visita": ("🇨🇩", "R.D. Congo"), "fecha": "Mié 17 jun", "hora": "13:00", "estadio": "NRG Stadium, Houston", "grupo": "K", "estado": "próximo"},
+    {"local": ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Inglaterra"), "visita": ("🇭🇷", "Croacia"), "fecha": "Mié 17 jun", "hora": "16:00", "estadio": "AT&T Stadium, Dallas", "grupo": "L", "estado": "próximo"},
+    {"local": ("🇬🇭", "Ghana"), "visita": ("🇵🇦", "Panamá"), "fecha": "Mié 17 jun", "hora": "19:00", "estadio": "BMO Field, Toronto", "grupo": "L", "estado": "próximo"},
+    {"local": ("🇺🇿", "Uzbekistán"), "visita": ("🇨🇴", "Colombia"), "fecha": "Mié 17 jun", "hora": "19:00", "estadio": "Est. Azteca, Ciudad de México", "grupo": "K", "estado": "próximo"},
 ]
 
 FAVORITOS = [
